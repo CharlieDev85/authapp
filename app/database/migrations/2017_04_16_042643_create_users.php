@@ -19,6 +19,7 @@ class CreateUsers extends Migration {
             $newtable->string('email')->unique();
             $newtable->string('username', 100)->unique();
             $newtable->string('password', 128)->unique();
+            //after running migration; remember token was changed in db to default null
             $newtable->string('remember_token', 100);
             //$newtable->timestamps();
             //it was causing an error in mysql, fixed with following line
