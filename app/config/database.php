@@ -54,10 +54,11 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
-			'database'  => 'database',
+//			'host'      => 'localhost',
+            'host'      => '127.0.0.1',
+			'database'  => 'authapp',
 			'username'  => 'root',
-			'password'  => '',
+			'password'  => 'Charlie',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
