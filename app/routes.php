@@ -29,3 +29,30 @@ Route::post('/register', function(){
     $theEmail = Input::get('email');
     return View::make('thanks')->with('theEmail', $theEmail);
 });
+
+Route::get('/login', function(){
+    return View::make('login');
+});
+
+Route::post('/login', function(){
+    $credentials = Input::only('username', 'password');
+    if(Auth::attempt($credentials)){
+        return Redirect::intended('/');
+    };
+    return Redirect::to('login');
+});
+
+Route::get('/logout', function(){
+    Auth::logout();
+    return View::make('logout');
+});
+
+Route::get('/spotlight', array(
+            //It call the generic auth of browser
+        ////'before'=>'auth.basic',
+        'before'=>'auth',
+    function()
+    {
+    return View::make('spotlight');
+    })
+    );
