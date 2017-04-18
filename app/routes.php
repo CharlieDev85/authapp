@@ -15,3 +15,17 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
+
+Route::get('/register', function(){
+    return View::make('register');
+});
+
+Route::post('/register', function(){
+    $user = new User;
+    $user->email = Input::get('email');
+    $user->username = Input::get('username');
+    $user->password = Hash::make(Input::get('password'));
+    $user->save();
+    $theEmail = Input::get('email');
+    return View::make('thanks')->with('theEmail', $theEmail);
+});

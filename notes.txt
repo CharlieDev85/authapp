@@ -1,0 +1,19 @@
+composer create-project laravel/laravel=4.1.* authapp
+
+php artisan serve
+
+//I need a migration to create tables from Laravel
+
+php artisan migrate:make create_users
+
+//create a session table
+
+php artisan session:table
+
+//after previos session is created, I can run the migration
+
+php artisan migrate
+
+//creating a registration form:
+
+24203000 31070
